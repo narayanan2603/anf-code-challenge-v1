@@ -15,6 +15,6 @@
   ~ limitations under the License.
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <workspaceFilter version="1.0">
-    <filter root="/apps/anf-code-challenge-packages"/>
-    <filter root="/apps/anf-code-challenge-vendor-packages"/>
+    <filter root="/apps/anf-code-challenge-packages" mode = "merge"/>
+    <filter root="/apps/anf-code-challenge-vendor-packages" mode = "merge"/>
 </workspaceFilter>

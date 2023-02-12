@@ -1,0 +1,21 @@
+<!--Getting News Object from the Custom Component Class -->
+<div class="news-feed-container" data-sly-use.newsModel="com.anf.core.models.CustomComponent">
+    <!--Iterating the List to get the list of values -->
+    <div class="news-feed-links" data-sly-list.newsFeed="${newsModel.newsList}">
+        <a data-sly-test.url="${newsFeed.url}" href="${url}" class="news-feed-link">
+            <div class="news-feed-image-container">
+                <img data-sly-test.urlImage="${newsFeed.urlImage}" class="news-feed-image" src="${urlImage}"
+                     alt="${newsFeed.title}"/>
+            </div>
+            <div class="news-feed-content">
+                <h2 data-sly-test.title="${newsFeed.title}" class="news-feed-content__title">${title}</h2>
+                <h4 data-sly-test.desc="${newsFeed.description}" class="news-feed-content__description">${desc
+                    @context="html"}</h4>
+                <p data-sly-test.content="${newsFeed.content}" class="news-feed-content__content">${content
+                    @context="html"}</p>
+                <span data-sly-test.author="${newsFeed.author}" class="news-feed-conent__author">By ${author}</span>
+            </div>
+        </a>
+    </div>
+    <!--End of the List -->
+</div>

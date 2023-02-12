@@ -1,0 +1,18 @@
+<sly data-sly-use.customComponent="com.anf.core.models.CustomComponent">
+    <!-- Condition to show the empty text  in the Author mode -->
+    <sly data-sly-test.customComponentObject="${wcmmode.edit && !customComponent.pagePath}">
+        <div class="cq-placeholder box-container" data-emptytext="Custom Component"></div>
+    </sly>
+    <!--End of the empty text section-->
+
+    <sly data-sly-test.value="${customComponent.pagePath == '/content/anf-code-challenge/us/en'}">
+        <!--Condition to Iterate the Children based on the Query Builder API -->
+        <sly data-sly-list.childrens="${customComponent.arrayList}">
+            <li><a href="${childrens}">${childrens}</a></li>
+        </sly>
+        <!-- End of Query Builder API Section -->
+    </sly>
+    <sly data-sly-test="${!value}">
+        <sly data-sly-include="news.html"/>
+    </sly>
+</sly>
