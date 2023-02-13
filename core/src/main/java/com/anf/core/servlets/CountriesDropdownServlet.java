@@ -29,6 +29,14 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+/**
+ * The CountriesDropdownServlet will take care of Populating the countries Dropdown
+ * in the Country Form component dialog.
+ *
+ * @author NK
+ * @version 1.0
+ * @since 02-13-2023
+ */
 @Component(
         service = Servlet.class,
         name = "com.anf.core.servlets.CountriesDropdownServlet",
@@ -44,8 +52,6 @@ public class CountriesDropdownServlet extends SlingSafeMethodsServlet {
 
     /**
      * To fetch a country dropdown and assign the valueMap as text value pair for dynamic dropdown
-     *
-     *
      */
     @Override
     protected void doGet(final SlingHttpServletRequest slingHttpServletRequest,

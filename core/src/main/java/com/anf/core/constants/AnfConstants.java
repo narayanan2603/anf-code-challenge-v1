@@ -3,6 +3,14 @@ package com.anf.core.constants;
 
 import org.apache.commons.lang3.StringUtils;
 
+/**
+ * The AnfConstants will take care of storing all the re-usable constants
+ * This will avoid the Duplication in our code base.
+ *
+ * @author NK
+ * @version 1.0
+ * @since 02-13-2023
+ */
 public class AnfConstants {
 
     //Space to add Listener based Constants

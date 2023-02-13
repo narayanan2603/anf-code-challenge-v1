@@ -24,6 +24,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import com.day.cq.commons.jcr.JcrConstants;
 
+/**
+ * The SubmitUserDetails will take care of sending the user enter values to the /var folder
+ *
+ * @author NK
+ * @version 1.0
+ * @since 02-13-2023
+ */
 @Component(service = {Servlet.class})
 @SlingServletResourceTypes(
         resourceTypes = "sling/servlet/default",
@@ -36,10 +43,11 @@ public class SubmitUserDetails extends SlingAllMethodsServlet {
     private static final long serialVersionUID = 1L;
     private static final Logger LOGGER = LoggerFactory.getLogger(SubmitUserDetails.class);
 
+
     /**
-     * To persist the user details and send the response
-     *
-     */
+     * doPost method will take care of getting the request from the URL, convert the
+     * input to Json and pass it over to the backend..
+     * */
     @Override
     protected void doPost(final SlingHttpServletRequest slingHttpServletRequest,
                           final SlingHttpServletResponse slingHttpServletResponse) throws IOException {
@@ -60,7 +68,8 @@ public class SubmitUserDetails extends SlingAllMethodsServlet {
     }
 
     /**
-     * To persist the user details to var/anfuserdetails node
+     * persistUserDetails method will take care of storing the user entered
+     * value into var/anfuserdetails node
      * @return boolean
      */
     private boolean persistUserDetails(SlingHttpServletRequest slingHttpServletRequest) {
