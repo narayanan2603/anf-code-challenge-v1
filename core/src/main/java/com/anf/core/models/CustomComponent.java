@@ -143,7 +143,7 @@ public class CustomComponent {
     /*
      * getList method will take of adding the pages into Arraylist and send
      * it to the Sightly for rendering purpose.
-     * @return arrayList;
+      @return arrayList;
      * */
     public List<String> getList(final String pages) {
         try {

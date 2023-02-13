@@ -49,7 +49,6 @@ public class QueryServlet extends SlingSafeMethodsServlet {
     @Override
     protected void doGet(SlingHttpServletRequest request, SlingHttpServletResponse response)
             throws ServletException, IOException {
-
         ResourceResolver resourceResolver = request.getResourceResolver();
         response.setContentType(AnfConstants.APPLICATION_TYPE);
         JSONObject jsonObj = new JSONObject();
