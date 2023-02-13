@@ -4,7 +4,6 @@ import java.util.Map;
 
 /**
  * CountriesDropdownService to get a countries dropdown list
- *Begin Code - Teja*
  *
  */
 public interface CountriesDropdownService {
