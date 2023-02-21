@@ -54,4 +54,5 @@ public class CustomComponentTest {
         aemContext.currentResource(TEST_VAR_DATA_PATH);
         assertEquals("", customComponent.getFullPath(TEST_VAR_DATA_PATH));
     }
+    
 }
