@@ -1,7 +1,6 @@
 $(document).ready(function() {
     $(document).on('submit','form#anf-user-form',function(e) {
        e.preventDefault();
-
        var userData = {
         'firstName': $('[name="first-name"]').val(),
         'lastName': $('[name="last-name"]').val(),
