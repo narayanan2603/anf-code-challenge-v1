@@ -1,7 +1,7 @@
 package com.anf.core.pojo;
 
 /**
- *
+ * author: NK
  */
 public class News {
 

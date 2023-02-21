@@ -34,6 +34,7 @@ import java.util.*;
  * @author NK
  * @version 1.0
  * @since 02-11-2023
+ *
  */
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class CustomComponent {
