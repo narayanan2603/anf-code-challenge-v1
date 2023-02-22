@@ -3,4 +3,4 @@
           xmlns:jcr="http://www.jcp.org/jcr/1.0"
           jcr:primaryType="sling:OsgiConfig"
           service.ranking="2"
-          user.mapping="[anf-code-challenge.core:nkserviceuser\=nk-system-user]"/>
+          user.mapping="[anf-code-challenge.core:anfserviceuser\=anf-system-user]"/>

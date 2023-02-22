@@ -47,7 +47,7 @@ public class CountriesDropdownServiceImpl implements CountriesDropdownService {
         Map<String, String> countriesMap = new LinkedHashMap<>();
         try {
             Map<String, Object> param = new HashMap<>();
-            param.put(ResourceResolverFactory.SUBSERVICE, AnfConstants.NK_SERVICE_USER);
+            param.put(ResourceResolverFactory.SUBSERVICE, AnfConstants.ANF_SERVICE_USER);
             ResourceResolver resolver = resolverFactory.getServiceResourceResolver(param);
 
             Resource countriesJSONResource = resolver.getResource(AnfConstants.COUNTRY_JSON);

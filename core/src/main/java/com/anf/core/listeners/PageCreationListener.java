@@ -24,11 +24,10 @@ import java.util.Map;
  * @author NK
  * @version 1.0
  * @since 02-11-2023
- *
  */
 @Component(service = EventListener.class, immediate = true)
-public class CustomEventListener implements EventListener {
-    private static final Logger LOG = LoggerFactory.getLogger(CustomEventListener.class);
+public class PageCreationListener implements EventListener {
+    private static final Logger LOG = LoggerFactory.getLogger(PageCreationListener.class);
     @Reference
     ResourceResolverFactory resourceResolverFactory;
     ResourceResolver resourceResolver = null;
@@ -43,7 +42,7 @@ public class CustomEventListener implements EventListener {
     public void activate() {
         try {
             Map<String, Object> subService = new HashMap<>();
-            subService.put(ResourceResolverFactory.SUBSERVICE, AnfConstants.NK_SERVICE_USER);
+            subService.put(ResourceResolverFactory.SUBSERVICE, AnfConstants.ANF_SERVICE_USER);
             resourceResolver = resourceResolverFactory.getServiceResourceResolver(subService);
             observationSession = resourceResolver.adaptTo(Session.class);
             if (null != observationSession) {
@@ -88,7 +87,7 @@ public class CustomEventListener implements EventListener {
                 String path = event.getPath();
                 if (path.endsWith(AnfConstants.JCR_CONTENT)) {
                     Resource resource = resourceResolver.resolve(path);
-                    getResource(resource);
+                    addProperty(resource);
                 }
             } catch (RepositoryException onEventException) {
                 LOG.error("Exception in onEvent Method.", onEventException);
@@ -101,7 +100,7 @@ public class CustomEventListener implements EventListener {
      * adapting to node and add the property under the jcr:content node.
      * @param resource.
      * */
-    public void getResource(final Resource resource) {
+    public void addProperty(final Resource resource) {
         try {
             Node nodes = resource.adaptTo(Node.class);
             if (null != nodes) {
@@ -110,6 +109,8 @@ public class CustomEventListener implements EventListener {
             }
         } catch (Exception resourceException) {
             LOG.error("Exception in getResource method", resourceException);
+        } finally {
+            resourceResolver.close();
         }
     }
 
@@ -129,7 +130,6 @@ public class CustomEventListener implements EventListener {
         } finally {
             if (null != observationSession) {
                 observationSession.logout();
-                resourceResolver.close();
             }
         }
     }

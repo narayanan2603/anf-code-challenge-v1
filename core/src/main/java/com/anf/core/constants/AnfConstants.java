@@ -18,7 +18,7 @@ public class AnfConstants {
     public static final boolean IS_DEEP = true;
     public static final boolean NO_LOCAL = false;
     public static final String[] UUIDS = null;
-    public static final String NK_SERVICE_USER = "nkserviceuser";
+    public static final String ANF_SERVICE_USER = "anfserviceuser";
     //End of Listener based constants
 
     //Space to add Page related constants
