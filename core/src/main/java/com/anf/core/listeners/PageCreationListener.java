@@ -109,8 +109,6 @@ public class PageCreationListener implements EventListener {
             }
         } catch (Exception resourceException) {
             LOG.error("Exception in getResource method", resourceException);
-        } finally {
-            resourceResolver.close();
         }
     }
 
@@ -130,6 +128,7 @@ public class PageCreationListener implements EventListener {
         } finally {
             if (null != observationSession) {
                 observationSession.logout();
+                resourceResolver.close();
             }
         }
     }
